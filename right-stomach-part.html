@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type = "x-icon" href="minidoc.jfif">
+    <title> Declaring information</title>
+    <style>
+        body {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin : 0;
+            padding: 0
+        }
+        #blue-square {
+            width: 100%;
+            height: 50px;
+            background-color: #102999;
+        }
+        #main {
+            margin: 20px;
+            margin-left : 2.5%;
+            margin-right : 2.5%;
+            font-size : 25px;
+        }
+        #categories{
+            color: #102999;
+            cursor: pointer;
+            font-weight : bold;
+        }
+        #right-align {
+            width: 100%;        
+            text-align: right;
+        }
+        #space-between {
+            margin-right: 5%; 
+        }
+        #straight-line{
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+        }
+        #progress-bar {
+            width: 300px;
+            height: 20px;
+            background: linear-gradient(to right, rgb(195, 222, 247), rgb(195, 222, 247));
+            border-radius: 5px; 
+            overflow: hidden;
+            margin-left : 20px;
+        }
+
+        #progress {
+            height: 100%;
+            width: 37.5%;
+            background-color: #102999;
+            border-radius: 5px 0 0 5px; 
+            
+        }
+        #progress-bar-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #progress-text{
+            color: #102999;
+            font-weight: bold;
+            font-size : 30px;
+        }
+        h3 {
+            margin-top : 2%;
+            margin-left: 25%;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+        .box {
+            width: 1000px;
+            height: 120px; 
+            border: 3px solid lightgray; 
+            border-radius: 20px;
+            padding: 10px;
+            cursor: pointer;
+            margin: 13px; 
+            box-sizing: border-box; 
+            display: flex;
+            flex-direction: column;
+        }
+        .box p {
+            margin: 0; 
+            margin-left : 20px;
+            flex-grow: 1; 
+        }
+        #box1.highlighted,
+        #box2.highlighted,
+        #box3.highlighted,
+        #box4.highlighted,
+        #box5.highlighted {
+            border-color: #102999; 
+        }
+        #head-text{
+            color : #102999;
+            font-size: 28px;
+        }
+        #nextButton{
+            border-radius: 5px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #102999;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-family: Arial, serif;
+            font-size: 25px;
+            width : 100px;
+        }
+        #button-container {
+            display: flex;
+            align-items: center;
+            margin-left : 45%;
+        }
+        #left-align{
+            float : left;
+        }
+    </style>
+</head>
+<body>
+    <div id="blue-square"></div>
+    <div id="main">
+        <div id="right-align">
+            <p>
+                <img id = "left-align" src="minidoc.jfif" width="200" height = "50"> 
+                <span id="categories" onclick = "about()">About</span><span id="space-between"></span>
+                <span id="categories" onclick = "symptomcheck()">Symptom checker</span><span id="space-between"></span>
+                <span id="categories" onclick = "healthwellness()">Health & Wellness</span><span id="space-between"></span>
+                <span id="categories" onclick = "news()">News</span>
+            </p>
+        </div>
+        <div id = "straight-line"></div>
+        <div id = "progress-bar-container">
+            <span id = "progress-text"> Checking symptoms </span>
+            <div id = "progress-bar">
+                <div id=  "progress"></div>
+            </div>
+        </div>
+        <div id = "straight-line"></div>
+        <h3> Result for right stomach pain:</h3>
+        <div id="container">
+            <!-- Box 3 -->
+            <div id="box3" class="box" onclick="highlightBox('box3')">
+                <p><span id="head-text" ><strong>Abdominal pain that shoots to the lower right side</strong></span></p>
+                <p><strong>The pain is shooting to the lower right part of my stomach</strong></p>
+            </div>
+
+            <!-- Box 1 -->
+            <div id="box1" class="box" onclick="highlightBox('box1')">
+              <p><span id="head-text" ><strong>Pain in lower right abdomen</strong></span></p>
+              <p><strong>The lower right part of my stomach hurts</strong></p>
+            </div>
+        
+            <!-- Box 2 -->
+            <div id="box2" class="box" onclick="highlightBox('box2')">
+                <p><span id="head-text" ><strong>Pain in upper right abdomen</strong></span></p>
+                <p><strong>The upper right part of my stomach hurts</strong></p>
+            </div>
+        
+            <!-- Box 4 -->
+            <div id="box4" class="box" onclick="highlightBox('box4')">
+                <p><span id="head-text" ><strong>Pain in the upper left abdomen</strong></span></p>
+                <p><strong>The upper left part of my stomach hurts</strong></p>
+            </div>
+
+            <!-- Box 5 -->
+            <div id="box5" class="box" onclick="highlightBox('box5')">
+                <p><span id="head-text" ><strong>Pain in the lower left abdomen</strong></span></p>
+                <p><strong>The lower left part of my stomach hurts</strong></p>
+            </div>
+        </div>
+        <div id="button-container">
+            <button id="nextButton" onclick="nextButtonClick()">Next</button>
+        </div>
+    <script>
+        function highlightBox(boxId) {
+            var selectedBox = document.getElementById(boxId);
+            var isHighlighted = selectedBox.classList.contains('highlighted');
+            var boxes = document.querySelectorAll('.box');
+            boxes.forEach(function(box) {
+                box.classList.remove('highlighted');
+            });
+            if (!isHighlighted) {
+                selectedBox.classList.add('highlighted');
+            }
+        }
+        function nextButtonClick() {
+            var selectedBox = document.querySelector('.highlighted');
+            
+            if (selectedBox) {
+                var headingText = selectedBox.querySelector('p:first-child').innerText;
+                switch (headingText) {
+                    case 'Abdominal pain that shoots to the lower right side':
+                    window.location.href = 'abs-pain-lower-right.html';
+                    break;
+                }
+            } else {
+            alert('Please select an option before clicking Next.');
+            }
+        }
+    </script>
+</body>
+</html>

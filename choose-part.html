@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type = "x-icon" href="minidoc.jfif">
+    <title> Declaring information</title>
+    <style>
+        body {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin : 0;
+            padding: 0
+        }
+        #blue-square {
+            width: 100%;
+            height: 50px;
+            background-color: #102999;
+        }
+        #main {
+            margin: 20px;
+            margin-left : 2.5%;
+            margin-right : 2.5%;
+            font-size : 25px;
+        }
+        #categories{
+            color: #102999;
+            cursor: pointer;
+            font-weight : bold;
+        }
+        #right-align {
+            width: 100%;        
+            text-align: right;
+        }
+        #space-between {
+            margin-right: 5%; 
+        }
+        #straight-line{
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+        }
+        #progress-bar {
+            width: 300px;
+            height: 20px;
+            background: linear-gradient(to right, rgb(195, 222, 247), rgb(195, 222, 247));
+            border-radius: 5px; 
+            overflow: hidden;
+            margin-left : 20px;
+        }
+
+        #progress {
+            height: 100%;
+            width: 25%;
+            background-color: #102999;
+            border-radius: 5px 0 0 5px; 
+            
+        }
+        #progress-bar-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #progress-text{
+            color: #102999;
+            font-weight: bold;
+            font-size : 30px;
+        }
+        h2 {
+            margin-top : 2%;
+            margin-left: 10%; 
+        }
+        img{
+          display: block;
+          margin : 0 auto;
+        }
+        #clickable-area {
+          cursor : pointer;
+        }
+        #left-align{
+            float : left;
+        }
+    </style>
+</head>
+<body>
+    <div id="blue-square"></div>
+    <div id="main">
+        <div id="right-align">
+            <p>
+                <img id = "left-align" src="minidoc.jfif" width="200" height = "50"> 
+                <span id="categories" onclick = "about()">About</span><span id="space-between"></span>
+                <span id="categories" onclick = "symptomcheck()">Symptom checker</span><span id="space-between"></span>
+                <span id="categories" onclick = "healthwellness()">Health & Wellness</span><span id="space-between"></span>
+                <span id="categories" onclick = "news()">News</span>
+            </p>
+        </div>
+        <div id = "straight-line"></div>
+        <div id = "progress-bar-container">
+            <span id = "progress-text">Collecting Information     </span>
+            <div id = "progress-bar">
+                <div id=  "progress"></div>
+            </div>
+        </div>
+        <div id = "straight-line"></div>
+        <h2> Please choose the part where you are feeling discomfort: (Please click on the number)</h2>
+        <img src="https://s3-eu-west-1.amazonaws.com/ppreviews-plos-725668748/2294496/preview.jpg" alt="Body" width="600" height="600" alt = "Number Pick" usemap = "#bodymap">
+        <map name = "bodymap">
+          <area id = "clickable-area" shape = "rect" coords="120,0,140,30" alt="Number 1" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="145,0,165,30" alt="Number 2" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="130,70,150,100" alt="Number 3" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="107,115,123,130" alt="Number 4" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="160,115,172,130" alt="Number 5" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="75,155,87,175" alt="Number 6" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="198,155,210,175" alt="Number 7" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="48,215,60,235" alt="Number 8" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="230,215,242,235" alt="Number 9" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="18,275,30,295" alt="Number 10" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="255,267,267,287" alt="Number 11" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="107,158,123,180" alt="Number 12" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="160,158,172,180" alt="Number 13" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="110,215,140,255" alt="Number 14" href ="right-stomach-part.html" />
+          <area id = "clickable-area" shape = "rect" coords="155,220,167,240" alt="Number 15" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="135,275,148,295" alt="Number 16" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="111,318,128,338" alt="Number 17" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="157,318,170,338" alt="Number 18" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="115,465,130,485" alt="Number 19" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="150,463,168,483" alt="Number 20" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="112,557,127,577" alt="Number 21" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="155,555,170,575" alt="Number 22" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="447,22,460,42" alt="Number 23" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="466,22,480,42" alt="Number 24" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="460,75,472,91" alt="Number 25" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="416,108,433,123" alt="Number 26" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="490,108,507,123" alt="Number 27" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="399,163,415,176" alt="Number 28" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="520,163,536,176" alt="Number 29" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="376,209,391,228" alt="Number 30" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="541,209,556,228" alt="Number 31" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="346,279,362,297" alt="Number 32" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="570,280,587,296" alt="Number 33" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="435,149,451,167" alt="Number 34" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="476,149,493,167" alt="Number 35" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="438,211,454,230" alt="Number 36" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="470,209,487,228" alt="Number 37" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="436,274,452,290" alt="Number 38" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="478,273,494,290" alt="Number 39" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="433,337,450,353" alt="Number 40" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="478,337,494,353" alt="Number 41" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="435,463,453,482" alt="Number 42" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="473,463,489,482" alt="Number 43" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="438,574,455,590" alt="Number 44" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="470,570,487,587" alt="Number 45" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="457,243,474,261" alt="Number 46" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="438,553,455,569" alt="Number 47" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="471,550,488,564" alt="Number 48" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="115,408,130,428" alt="Number 49" href ="" />
+          <area id = "clickable-area" shape = "rect" coords="153,408,170,428" alt="Number 50" href ="" />
+        </map>
+
+    <script>
+        function showAlert() {
+            alert("You clicked on Number 1!");
+        }
+        
+    </script>
+</body>
+</html>

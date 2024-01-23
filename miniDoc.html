@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type = "x-icon" href="minidoc.jfif">
+    <title> miniDoc Checker</title>
+    <style>
+        body {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin : 0;
+            padding: 0
+        }
+        .blue-square {
+            width: 100%;
+            height: 50px;
+            background-color: #102999;
+        }
+        .main {
+            margin: 20px;
+            margin-left : 2.5%;
+            margin-right : 2.5%;
+            font-size : 25px;
+        }
+        .agree {
+            border-radius: 5px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #102999;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-family: Arial, serif;
+            font-size: 28px;
+            width : 25%
+        }
+        .categories{
+            color: #102999;
+            cursor: pointer;
+            font-weight : bold;
+        }
+        .custom-font {
+            font-family: Georgia, serif;
+            font-size : 28px; 
+        }
+        .right-align {
+            width: 100%;        
+            text-align: right;
+        }
+        .space-between {
+            margin-right: 5%; 
+        }
+        .square {
+            display: flex;
+            font-size : 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            height: 30%;
+            padding: 15px;
+            border: 3px solid #102999;
+            border-radius : 5px;
+            line-height: 2;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+        .highlight-font {
+            background-color :#102999;
+            display : inline-block;
+            padding: 0px; 
+            margin: 5px; 
+            color : white;
+        }
+        .bold-font{
+            font-weight : bold;
+            color : #102999;
+        }
+        .underline-font{
+            text-decoration: underline;
+            text-decoration-color: rgb(26, 96, 248);
+        }
+        .arrow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }  
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid #102999; 
+        }
+        .straight-line{
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+        }
+        .line {
+            width: 4px;
+            height: 20px;
+            background-color: #102999; 
+            margin-top: 0px; 
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left-align{
+            float : left;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue-square"></div>
+    
+    <div class="main">
+        <div class="right-align">
+            <p>
+                <img class = "left-align" src="minidoc.jfif" width="200" height = "50"> 
+                <span class="categories" onclick = "about()">About</span><span class="space-between"></span>
+                <span class="categories" onclick = "symptomcheck()">Symptom checker</span><span class="space-between"></span>
+                <span class="categories" onclick = "healthwellness()">Health & Wellness</span><span class="space-between"></span>
+                <span class="categories" onclick = "news()">News</span>
+            </p>
+        </div>
+        <div class = "straight-line"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="square">
+                <p>
+                    This tool is<span class="highlight-font">not a substitute or professional medical advice</span>, diagnosis, or treatment. If you are experiencing a<span class="highlight-font">life-threatening emergency</span> that requires immediate <span class="underline-font">attention</span>, please <span class="bold-font"> call 911</span> or the number for your <span class="bold-font">local emergency service.</span>
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="arrow-container">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="arrow-down"></div>
+        </div>
+
+        <br>
+        <div class ="container">
+            <p>
+                By clicking "Agree & Continue", you agree that you are at least 13 years old and agree to miniDoc's <span class="bold-font underline-font categories" onclick = "termofuse()">Term of use</span> and <span class="bold-font underline-font categories" onclick = "privacy()">Privacy Policy</span>.
+            </p>
+        </div>
+        <br>
+        <div class="button-container">
+            <button class="agree" onclick = "agreeAndContinue()"> Agree & Continue</button>
+        </div>
+    </div>
+    <script>
+        function agreeAndContinue() {
+            window.location.href = 'declaring-genold.html';
+        }
+        function about() {
+            
+        }
+        function symptomcheck() {
+            
+        }
+        function healthwellness() {
+            
+        }
+        function news() {
+            
+        }
+        function termofuse(){
+            
+        }
+        function privacy(){
+            
+        }
+    </script>
+</body>
+</html>

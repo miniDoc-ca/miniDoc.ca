@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type = "x-icon" href="minidoc.jfif">
+    <title> Declaring information</title>
+    <style>
+        body {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin : 0;
+            padding: 0
+        }
+        #blue-square {
+            width: 100%;
+            height: 50px;
+            background-color: #102999;
+        }
+        #main {
+            margin: 20px;
+            margin-left : 2.5%;
+            margin-right : 2.5%;
+            font-size : 25px;
+        }
+        #categories{
+            color: #102999;
+            cursor: pointer;
+            font-weight : bold;
+        }
+        #right-align {
+            width: 100%;        
+            text-align: right;
+        }
+        #space-between {
+            margin-right: 5%; 
+        }
+        #straight-line{
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+        }
+        #progress-bar {
+            width: 300px;
+            height: 20px;
+            background: linear-gradient(to right, rgb(195, 222, 247), rgb(195, 222, 247));
+            border-radius: 5px; 
+            overflow: hidden;
+            margin-left : 20px;
+        }
+
+        #progress {
+            height: 100%;
+            width: 87.5%;
+            background-color: #102999;
+            border-radius: 5px 0 0 5px; 
+            
+        }
+        #progress-bar-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #progress-text{
+            color: #102999;
+            font-weight: bold;
+            font-size : 30px;
+        }
+        #left-align{
+            float : left;
+        }
+        .checkbox-container-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: column; 
+            height: 10%vh; 
+        }
+        .checkbox-container {
+            display: flex;
+            margin-left : 15px;
+            align-items: center;
+            margin-bottom: 10px;
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+            background-color: rgb(231, 231, 231);
+            width: 92%;
+            padding: 10px; 
+            cursor: pointer; 
+        }
+        .checkbox-container input {
+            display: none;
+        }
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #102999;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-checkbox.checked {
+            background-color: #102999;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        h3 {
+            margin-top : 2%;
+            margin-left: 15px;
+        }
+        .border-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 3px solid #102999;
+            padding: 20px;
+            width: 40%; 
+            margin: auto; 
+        }
+        .align-center{
+            display: center;
+        }
+        .nausea{
+            font-size: 40px;
+            margin-left : 15px;
+            color: #102999;
+            font-weight: bold;
+        }
+        .margin{
+            margin-left :15px;
+            margin-right : 15px;
+        }
+        .button {
+            border-radius: 5px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #102999;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-family: Arial, serif;
+            font-size: 25px;
+            width : 25%
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="blue-square"></div>
+    <div id="main">
+        <div id="right-align">
+            <p>
+                <img id = "left-align" src="minidoc.jfif" width="200" height = "50"> 
+                <span id="categories" onclick = "about()">About</span><span id="space-between"></span>
+                <span id="categories" onclick = "symptomcheck()">Symptom checker</span><span id="space-between"></span>
+                <span id="categories" onclick = "healthwellness()">Health & Wellness</span><span id="space-between"></span>
+                <span id="categories" onclick = "news()">News</span>
+            </p>
+        </div>
+        <div id = "straight-line"></div>
+        <div id = "progress-bar-container">
+            <span id = "progress-text"> Checking symptoms </span>
+            <div id = "progress-bar">
+                <div id=  "progress"></div>
+            </div>
+        </div>
+        <div id = "straight-line"></div>
+        <br>
+        <br>
+        <div class = "border-box">
+            <p><span class = "nausea"> Nausea</span></p>
+            <div id = "straight-line"></div>
+            <h3> How severe is your nausea?</h3>
+            <div class="checkbox-container-wrapper">
+                <div class="checkbox-container" onclick="handleClick3('Mild')">
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="Mild" name="how-severe">
+                </div>
+                <label for="Mild"><span class="bold-text">Mild</span></label>
+                </div>
+
+                <div class="checkbox-container" onclick="handleClick3('Moderate')">
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="Moderate" name="how-severe">
+                </div>
+                <label for="Moderate"><span class="bold-text">Moderate</span></label>
+                </div>
+
+                <div class="checkbox-container" onclick="handleClick3('Severe')">
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="Severe" name="how-severe">
+                </div>
+                <label for="Severe"><span class="bold-text">Severe</span></label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="button-container">
+            <button class="button" onclick = "AddAnothersymptom()"> Add another symptom</button>
+        </div>
+        <br>
+        <div class="button-container">
+            <button class="button" onclick = "DoneAdding()"> I'm done adding symptoms</button>
+        </div>
+    </div>
+    
+
+
+    <script>
+        function handleClick3(optionId) {
+            const checkbox = document.getElementById(optionId);
+            const customCheckbox = checkbox.parentNode;
+            if (!checkbox.checked) {
+                checkbox.checked = true;
+                customCheckbox.classList.add('checked');
+            } else {
+                checkbox.checked = false;
+                customCheckbox.classList.remove('checked');
+            }
+            const checkboxes = document.querySelectorAll('input[name="how-severe"]');
+            checkboxes.forEach((checkbox) => {
+                const currentCustomCheckbox = checkbox.parentNode;
+                if (checkbox.id !== optionId && checkbox.checked) {
+                    checkbox.checked = false;
+                    currentCustomCheckbox.classList.remove('checked');
+                }
+            });
+        }
+
+        function AddAnothersymptom(){
+
+        }
+
+        function DoneAdding(){
+            const severityOptions = document.querySelectorAll('input[name="how-severe"]');
+            if (!(Array.from(severityOptions).some(option => option.checked))) {
+            alert('Please select options for severity before proceeding.');
+            return;
+        }
+        window.location.href = 'final-review.html';
+        }
+    </script>
+</body>
+</html>

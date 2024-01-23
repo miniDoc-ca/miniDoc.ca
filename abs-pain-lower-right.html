@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type = "x-icon" href="minidoc.jfif">
+    <title> Declaring information</title>
+    <style>
+        body {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin : 0;
+            padding: 0
+        }
+        #blue-square {
+            width: 100%;
+            height: 50px;
+            background-color: #102999;
+        }
+        #main {
+            margin: 20px;
+            margin-left : 2.5%;
+            margin-right : 2.5%;
+            font-size : 25px;
+        }
+        #categories{
+            color: #102999;
+            cursor: pointer;
+            font-weight : bold;
+        }
+        #right-align {
+            width: 100%;        
+            text-align: right;
+        }
+        #space-between {
+            margin-right: 5%; 
+        }
+        #straight-line{
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+        }
+        #progress-bar {
+            width: 300px;
+            height: 20px;
+            background: linear-gradient(to right, rgb(195, 222, 247), rgb(195, 222, 247));
+            border-radius: 5px; 
+            overflow: hidden;
+            margin-left : 20px;
+        }
+
+        #progress {
+            height: 100%;
+            width: 50%;
+            background-color: #102999;
+            border-radius: 5px 0 0 5px; 
+            
+        }
+        #progress-bar-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #progress-text{
+            color: #102999;
+            font-weight: bold;
+            font-size : 30px;
+        }
+        #left-align{
+            float : left;
+        }
+        h3 {
+            margin-top : 2%;
+            margin-left: 25%;
+        }
+        .checkbox-container-wrapper {
+            display: flex;
+            margin-left : 25%;
+            justify-content: center;
+            flex-direction: column; 
+            height: 10%vh; 
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+            background-color: rgb(231, 231, 231);
+            width: 70%;
+            padding: 10px; 
+            cursor: pointer; 
+        }
+        .checkbox-container input {
+            display: none;
+        }
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #102999;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-checkbox.checked {
+            background-color: #102999;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .date-dropdown {
+            width: 200px; 
+            height: 50px;
+            background-color: rgb(231, 231, 231); 
+            font-weight: bold;
+        }
+        .dropdown-container {
+            display: flex;
+            margin-left:25%;
+        }
+        #nextButton{
+            border-radius: 5px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #102999;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-family: Arial, serif;
+            font-size: 25px;
+            width : 100px;
+        }
+        #button-container {
+            display: flex;
+            align-items: center;
+            margin-left : 45%;
+            margin-top : 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="blue-square"></div>
+    <div id="main">
+        <div id="right-align">
+            <p>
+                <img id = "left-align" src="minidoc.jfif" width="200" height = "50"> 
+                <span id="categories" onclick = "about()">About</span><span id="space-between"></span>
+                <span id="categories" onclick = "symptomcheck()">Symptom checker</span><span id="space-between"></span>
+                <span id="categories" onclick = "healthwellness()">Health & Wellness</span><span id="space-between"></span>
+                <span id="categories" onclick = "news()">News</span>
+            </p>
+        </div>
+        <div id = "straight-line"></div>
+        <div id = "progress-bar-container">
+            <span id = "progress-text"> Checking symptoms </span>
+            <div id = "progress-bar">
+                <div id=  "progress"></div>
+            </div>
+        </div>
+        <div id = "straight-line"></div>
+        <h3> Is your abdominal pain getting better or worse?</h3>
+        <div class="checkbox-container-wrapper">
+            <div class="checkbox-container" onclick="handleClick1('Getting better')">
+            <div class="custom-checkbox">
+                <input type="checkbox" id="Getting better" name="duration1">
+            </div>
+            <label for="Getting better"><span class="bold-text">Getting better</span></label>
+            </div>
+
+            <div class="checkbox-container" onclick="handleClick1('Staying the same')">
+            <div class="custom-checkbox">
+                <input type="checkbox" id="Staying the same" name="duration1">
+            </div>
+            <label for="Staying the same"><span class="bold-text">Staying the same</span></label>
+            </div>
+
+            <div class="checkbox-container" onclick="handleClick1('Getting worse')">
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="Getting worse" name="duration1">
+                </div>
+                <label for="Getting worse"><span class="bold-text">Getting worse</span></label>
+                </div>
+        </div>
+
+        <h3> Is your abdominal pain constant or come-and-go?</h3>
+        <div class="checkbox-container-wrapper">
+            <div class="checkbox-container" onclick="handleClick2('constant')">
+            <div class="custom-checkbox">
+                <input type="checkbox" id="constant" name="duration2">
+            </div>
+            <label for="constant"><span class="bold-text">Constant</span></label>
+            </div>
+
+            <div class="checkbox-container" onclick="handleClick2('come-and-go')">
+            <div class="custom-checkbox">
+                <input type="checkbox" id="come-and-go" name="duration2">
+            </div>
+            <label for="come-and-go"><span class="bold-text">Come-and-go</span></label>
+            </div>
+        </div>
+        <h3> How severe is your abdominal pain?</h3>
+        <div class="checkbox-container-wrapper">
+            <div class="checkbox-container" onclick="handleClick3('Discomfort or mild pain')">
+            <div class="custom-checkbox">
+                <input type="checkbox" id="Discomfort or mild pain" name="how-severe">
+            </div>
+            <label for="Discomfort or mild pain"><span class="bold-text">Discomfort or mild pain</span></label>
+            </div>
+
+            <div class="checkbox-container" onclick="handleClick3('Moderate')">
+            <div class="custom-checkbox">
+                <input type="checkbox" id="Moderate" name="how-severe">
+            </div>
+            <label for="Moderate: limiting activities and/or need for painkillers"><span class="bold-text">Moderate: limiting activities and/or need for painkillers</span></label>
+            </div>
+            <div class="checkbox-container" onclick="handleClick3('Severe')">
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="Severe" name="how-severe">
+                </div>
+                <label for="Severe: close to the worst pain I have ever experienced"><span class="bold-text">Severe: close to the worst pain I have ever experienced</span></label>
+                </div>
+        </div>
+        <h3> How long has your abdominal pain been going on?</h3>
+        <div class="dropdown-container" >
+            <select id="day" name="day" class="date-dropdown"></select>
+            <select id="context" name="context" class="date-dropdown">
+                <option value="day">Day</option>
+                <option value="month">Month</option>
+                <option value="year">Year</option>
+            </select>
+        </div>
+        <div id="button-container">
+            <button id="nextButton" onclick="nextButtonClick()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        function handleClick1(optionId) {
+            const checkbox = document.getElementById(optionId);
+            const customCheckbox = checkbox.parentNode;
+            if (!checkbox.checked) {
+                checkbox.checked = true;
+                customCheckbox.classList.add('checked');
+            } else {
+                checkbox.checked = false;
+                customCheckbox.classList.remove('checked');
+            }
+            const checkboxes = document.querySelectorAll('input[name="duration1"]');
+            checkboxes.forEach((checkbox) => {
+                const currentCustomCheckbox = checkbox.parentNode;
+                if (checkbox.id !== optionId && checkbox.checked) {
+                    checkbox.checked = false;
+                    currentCustomCheckbox.classList.remove('checked');
+                }
+            });
+        }
+        function handleClick2(optionId) {
+            const checkbox = document.getElementById(optionId);
+            const customCheckbox = checkbox.parentNode;
+            if (!checkbox.checked) {
+                checkbox.checked = true;
+                customCheckbox.classList.add('checked');
+            } else {
+                checkbox.checked = false;
+                customCheckbox.classList.remove('checked');
+            }
+            const checkboxes = document.querySelectorAll('input[name="duration2"]');
+            checkboxes.forEach((checkbox) => {
+                const currentCustomCheckbox = checkbox.parentNode;
+                if (checkbox.id !== optionId && checkbox.checked) {
+                    checkbox.checked = false;
+                    currentCustomCheckbox.classList.remove('checked');
+                }
+            });
+        }
+        function handleClick3(optionId) {
+            const checkbox = document.getElementById(optionId);
+            const customCheckbox = checkbox.parentNode;
+            if (!checkbox.checked) {
+                checkbox.checked = true;
+                customCheckbox.classList.add('checked');
+            } else {
+                checkbox.checked = false;
+                customCheckbox.classList.remove('checked');
+            }
+            const checkboxes = document.querySelectorAll('input[name="how-severe"]');
+            checkboxes.forEach((checkbox) => {
+                const currentCustomCheckbox = checkbox.parentNode;
+                if (checkbox.id !== optionId && checkbox.checked) {
+                    checkbox.checked = false;
+                    currentCustomCheckbox.classList.remove('checked');
+                }
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+                var daySelect = document.getElementById("day");
+                var contextSelect = document.getElementById("context");
+                for (var i = 1; i <= 31; i++) {
+                        var option = document.createElement("option");
+                        option.value = i;
+                        option.text = i;
+                        daySelect.add(option);
+                }
+        });
+        function nextButtonClick() {
+        const durationOptions1 = document.querySelectorAll('input[name="duration1"]');
+        const durationOptions2 = document.querySelectorAll('input[name="duration2"]');
+        const severityOptions = document.querySelectorAll('input[name="how-severe"]');
+        
+        if (!(Array.from(durationOptions1).some(option => option.checked) &&
+            Array.from(durationOptions2).some(option => option.checked) &&
+            Array.from(severityOptions).some(option => option.checked))) {
+            alert('Please select options for duration and severity before proceeding.');
+            return;
+        }
+        window.location.href = 'history-symptoms.html';
+    }
+    </script>
+</body>
+</html>

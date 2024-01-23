@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type = "x-icon" href="minidoc.jfif">
+    <title> Final Decision</title>
+    <style>
+        body {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin : 0;
+            padding: 0
+        }
+        #blue-square {
+            width: 100%;
+            height: 50px;
+            background-color: #102999;
+        }
+        #main {
+            margin: 20px;
+            margin-left : 2.5%;
+            margin-right : 2.5%;
+            font-size : 25px;
+        }
+        #categories{
+            color: #102999;
+            cursor: pointer;
+            font-weight : bold;
+        }
+        #right-align {
+            width: 100%;        
+            text-align: right;
+        }
+        #space-between {
+            margin-right: 5%; 
+        }
+        #space-between2 {
+            margin-left: 33%; 
+        }
+        #space-between3 {
+            margin-left : 9.5%; 
+        }
+        #space-between4 {
+            margin-left : 20.8%; 
+        }
+        #space-between5 {
+            margin-left : 5%; 
+        }
+        #space-between6 {
+            margin-left : 60px; 
+        }
+        #space-between7 {
+            margin-left : 5%; 
+        }
+        #straight-line{
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+        }
+        #progress-bar {
+            width: 300px;
+            height: 20px;
+            background: linear-gradient(to right, rgb(195, 222, 247), rgb(195, 222, 247));
+            border-radius: 5px; 
+            overflow: hidden;
+            margin-left : 20px;
+        }
+
+        #progress {
+            height: 100%;
+            width: 100%;
+            background-color: #102999;
+            border-radius: 5px 0 0 5px; 
+            
+        }
+        #progress-bar-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #progress-text{
+            color: #102999;
+            font-weight: bold;
+            font-size : 30px;
+        }
+        #left-align{
+            float : left;
+        }
+        .checkbox-container-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: column; 
+            height: 10%vh; 
+        }
+        .checkbox-container {
+            display: flex;
+            margin-left : 15px;
+            align-items: center;
+            margin-bottom: 10px;
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+            background-color: rgb(231, 231, 231);
+            width: 92%;
+            padding: 10px; 
+            cursor: pointer; 
+        }
+        .checkbox-container input {
+            display: none;
+        }
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #102999;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-checkbox.checked {
+            background-color: #102999;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .border-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 3px solid #102999;
+            padding: 20px;
+            width: 800px; 
+            margin: auto; 
+        }
+        .align-center{
+            display: center;
+        }
+        .margin{
+            margin-left :15px;
+            margin-right : 15px;
+        }
+        .button {
+            border-radius: 5px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #102999;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-family: Arial, serif;
+            font-size: 25px;
+            width : 100%;
+            font-weight: bold;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top : 15px;
+        }
+
+
+        .button2 {
+            border-radius: 10px;
+            border : 3px solid #102999;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: white;
+            color: #102999;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-family: Arial, serif;
+            font-size: 15px;
+            font-weight: bold;
+            width : 150px;
+        }
+
+        .button3 {
+            border-radius: 10px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #102999;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-family: Arial, serif;
+            font-size: 15px;
+            font-weight: bold;
+            width : 150px;
+        }
+        .button4 {
+            border-radius: 10px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #102999;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-family: Arial, serif;
+            font-size: 15px;
+            font-weight: bold;
+            width : 150px;
+        }
+        .button-container2 {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            margin-top : 15px;
+        }
+
+
+        .centered-text{
+            text-align: center;
+            margin: 0; 
+        }
+        .centered-text p {
+            margin: 0.2em 0; 
+            font-size: 20px;
+            color: rgb(104, 103, 103);
+        }
+        .text-box { 
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .bold-font1{
+            font-weight : bold;
+            color : rgb(26, 96, 248);
+            cursor: pointer;
+        }
+        .bold-font2{
+            font-weight : bold;
+            color : #102999;
+            font-size: 25px;
+        }
+        .bold-font3{
+            font-weight : bold;
+            color : #102999;
+            font-size: 28px;
+        }
+        .underline-font{
+            text-decoration: underline;
+            text-decoration-color: rgb(26, 96, 248);
+        }
+        .blurry-overlay {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, 10%);
+            width: 800px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(3px);
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding-right: 20px;
+            padding-left : 20px;
+            padding-bottom : 20px;
+            background-color: #fff; /* Box background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            
+            border: 2px solid #102999; /* Border properties (change color as needed) */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1; /* Ensure the text is above the overlay */
+            font-size: 20px;
+            user-select: none; /* Prevent text selection */
+            margin-left: 10px;
+        }
+        .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center; /* Add this line to center-align text */
+        }
+        .text-sub1{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .reduce-space{
+            line-height: 0.1;
+        }
+        .optional-text{
+            font-size : 24px;
+        }
+        .two-sided-text, .image-border {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px; /* Add some margin between the two sections */
+        }
+
+        .paragraph1, .paragraph2 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .paragraph2 {
+            text-align: center;
+        }
+
+        .paragraph1 p, .paragraph2 p {
+            margin: 0;
+        }
+
+        .image-border {
+            display: flex;
+            align-items: center; /* Align both images to the center vertically */
+        }
+
+        .image-border img {
+            border: 2px solid lightgrey; /* You can customize the border color and width */
+            margin-right: 5px; /* Add margin on the right side for spacing */
+        }
+
+        /* Add margin-left to the second image for additional spacing */
+        .image-border img:last-child {
+            margin-right: 245px; /* Adjust the value as needed */
+        }
+    </style>
+</head>
+<body>
+    <div id="blue-square"></div>
+    <div id="main">
+        <div id="right-align">
+            <p>
+                <img id = "left-align" src="minidoc.jfif" width="200" height = "50"> 
+                <span id="categories" onclick = "about()">About</span><span id="space-between"></span>
+                <span id="categories" onclick = "symptomcheck()">Symptom checker</span><span id="space-between"></span>
+                <span id="categories" onclick = "healthwellness()">Health & Wellness</span><span id="space-between"></span>
+                <span id="categories" onclick = "news()">News</span>
+            </p>
+        </div>
+        <div id = "straight-line"></div>
+        <div id = "progress-bar-container">
+            <span id = "progress-text"> Final review </span>
+            <div id = "progress-bar">
+                <div id=  "progress"></div>
+            </div>
+        </div>
+        <div id = "straight-line"></div>
+        <br>
+        <div class="centered-text">
+            <p>Here is what maybe going on. Remember, this isn't meant to</p>
+            <p>replace professional medical advice, diagnosis, or treatment.</p>
+        </div>
+        <br>
+        <div class = "border-box">
+            <div class="text-box">
+                <p>Based on what you have indicated, the most likely condition right now is : <span class ="bold-font1 underline-font" onclick ="Gastroenteritis()">Gastroenteritis (stomach bug)</span></p>
+                <p>It is an inflammation of the stomach and intestines, typically due to a</p>
+            </div>
+
+            <div class="content">
+                <p>
+                    Viral gastroenteritis is an intestinal infection that includes signs and symptoms such as watery diarrhea, stomach cramps, nausea or vomiting, and sometimes fever.
+                    The most common way to develop viral gastroenteritis — often called stomach flu — is through contact with an infected person or by consuming contaminated food or water. If you're otherwise healthy, you'll likely recover without complications. But for infants, older adults and people with compromised immune systems, viral gastroenteritis can be deadly.
+                    There's no effective treatment for viral gastroenteritis, so prevention is key. Avoid food and water that may be contaminated and wash your hands thoroughly and often. 
+                </p>
+                <div class="blurry-overlay">
+                    <div class="box">
+                        <p>Further diagnosis and treatment:</p>
+                        <div class="center">
+                            <span class="bold-font2" style="text-align: center;">$5.99/access</span>
+                        </div>
+                        <div class="button-container">
+                            <button class="button" onclick="Payment()">Pay now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p><span class = "bold-font2">Recommended treatments</span>:</p>
+
+            <div class="image-border">
+                <img src="https://www.buoyhealth.com/care-marketplace/fc4e0341-64c4-49ec-a501-5c67a6d0e3d4.png?w=1200" width="180" height="100">
+                <img src="https://invitationdigital-res-1.cloudinary.com/image/upload/w_200,h_200,c_fill,q_auto,fl_strip_profile,f_auto/jetson_logo_1.jpg" width="150" height="100" style="margin-left: auto;">
+            </div>
+            
+            <div class="two-sided-text">
+                <div class="paragraph1">
+                    <p class="bold-font3">Primary Care</p>
+                    <p class="optional-text">Connect directly with a Lemonaid</p>
+                    <p class="optional-text">Health licensed provider.</p>
+                </div>
+                <div class="paragraph2">
+                    <p class="bold-font3">Jetson Gut Prep</p>
+                    <p class="optional-text">Daily Prebiotic to eliminate harmful</p>
+                    <p class="optional-text">bacteria in the gut.</p>
+                </div>
+            </div>
+            
+
+
+            <div class="button-container2">
+                <button class="button2" onclick="learnmore1()">Learn more</button>
+                <div id = "space-between5">
+                    <button class="button3" onclick="explore()">Explore</button>
+                </div>
+                <div id = "space-between6">
+                    <button class="button2" onclick="learnmore1()">Learn more</button>
+                    
+                </div>
+                <div id = "space-between7">
+                    <button class="button4" onclick="explore()">View on Amazon</button>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    
+
+
+    <script>
+        function Gastroenteritis(){
+            window.location.href = "https://www.mayoclinic.org/diseases-conditions/viral-gastroenteritis/symptoms-causes/syc-20378847"
+        }
+    </script>
+</body>
+</html>

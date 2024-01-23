@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type = "x-icon" href="minidoc.jfif">
+    <title> Declaring information</title>
+    <style>
+        body {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin : 0;
+            padding: 0
+        }
+        .blue-square {
+            width: 100%;
+            height: 50px;
+            background-color: #102999;
+        }
+        .main {
+            margin: 20px;
+            margin-left : 2.5%;
+            margin-right : 2.5%;
+            font-size : 25px;
+        }
+        .categories{
+            color: #102999;
+            cursor: pointer;
+            font-weight : bold;
+        }
+        .right-align {
+            width: 100%;        
+            text-align: right;
+        }
+        .space-between {
+            margin-right: 5%; 
+        }
+        .straight-line{
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+        }
+        h2 {
+            margin-top : 2%;
+            margin-left: 25%; 
+        }
+        .checkbox-container-wrapper {
+            display: flex;
+            margin-left : 30%;
+            justify-content: center;
+            flex-direction: column; 
+            height: 10%vh; 
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+            background-color: rgb(231, 231, 231);
+            width: 50%;
+            padding: 10px; 
+            cursor: pointer; 
+        }
+        .checkbox-container input {
+            display: none;
+        }
+
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #102999;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-checkbox.checked {
+            background-color: #102999;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+
+        #input-box {
+            display: flex;
+            align-items: center;
+            margin-left : 30%;
+        }
+        #userNumber {
+            padding: 20px;
+            width : 100px;
+            height : 30px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+        button {
+            margin-left : 40px;
+        }
+        #tick-icon {
+            color: green;
+            font-size: 20px;
+            display: none;
+        }
+        #check{
+            border-radius: 5px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #102999;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-family: Arial, serif;
+            font-size: 20px;
+            width : 100px;
+        }
+        #errorMessage {
+            color: red;
+        }
+        #button-container {
+            display: flex;
+            align-items: center;
+            margin-left : 28%;
+        }
+        #progress-bar {
+            width: 300px;
+            height: 20px;
+            background: linear-gradient(to right, rgb(195, 222, 247), rgb(195, 222, 247));
+            border-radius: 5px; 
+            overflow: hidden;
+            margin-left : 20px;
+        }
+
+        #progress {
+            height: 100%;
+            width: 12.5%;
+            background-color: #102999;
+            border-radius: 5px 0 0 5px; 
+            
+        }
+        #progress-bar-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #progress-text{
+            color: #102999;
+            font-weight: bold;
+            font-size : 30px;
+        }
+        #left-align{
+            float : left;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue-square"></div>
+    <div class="main">
+        <div class="right-align">
+            <p>
+                <img id = "left-align" src="minidoc.jfif" width="200" height = "50"> 
+                <span class="categories" onclick = "about()">About</span><span class="space-between"></span>
+                <span class="categories" onclick = "symptomcheck()">Symptom checker</span><span class="space-between"></span>
+                <span class="categories" onclick = "healthwellness()">Health & Wellness</span><span class="space-between"></span>
+                <span class="categories" onclick = "news()">News</span>
+            </p>
+        </div>
+        <div class = "straight-line"></div>
+        
+        <div id = "progress-bar-container">
+            <span id = "progress-text">Collecting Information     </span>
+            <div id = "progress-bar">
+                <div id=  "progress"></div>
+            </div>
+        </div>
+        <div class = "straight-line"></div>
+        <h2> What was your sex at birth?</h2>
+        <div class="checkbox-container-wrapper">
+            <div class="checkbox-container" onclick="handleClick('male')">
+            <div class="custom-checkbox">
+                <input type="checkbox" id="male" name="gender">
+            </div>
+            <label for="male"><span class="bold-text">Male</span></label>
+            </div>
+
+            <div class="checkbox-container" onclick="handleClick('female')">
+            <div class="custom-checkbox">
+                <input type="checkbox" id="female" name="gender">
+            </div>
+            <label for="female"><span class="bold-text">Female</span></label>
+            </div>
+        </div>
+        <h2> How old are you?</h2>
+        <div id="input-box">
+            <input type="text" id="userNumber" placeholder="Age" maxlength="3">
+            <span id="tick-icon">✓</span>
+            <button id = "check" onclick="checkNumber()">Check</button>
+        </div>
+
+        <div id="errorMessage"></div>
+        <br>
+        <div id="button-container">
+            <button id="check" onclick = "submit()">Submit</button>
+        </div>
+
+    </div>
+    <script>
+        function handleClick(optionId) {
+            const checkbox = document.getElementById(optionId);
+            const customCheckbox = checkbox.parentNode;
+            if (!checkbox.checked) {
+                checkbox.checked = true;
+                customCheckbox.classList.add('checked');
+            } else {
+                checkbox.checked = false;
+                customCheckbox.classList.remove('checked');
+            }
+            const checkboxes = document.querySelectorAll('input[name="gender"]');
+            checkboxes.forEach((checkbox) => {
+                const currentCustomCheckbox = checkbox.parentNode;
+                if (checkbox.id !== optionId && checkbox.checked) {
+                    checkbox.checked = false;
+                    currentCustomCheckbox.classList.remove('checked');
+                }
+            });
+        }
+        function checkNumber() {
+            var userInput = document.getElementById("userNumber").value;
+            var tickIcon = document.getElementById("tick-icon");
+            var errorMessage = document.getElementById("errorMessage");
+            if (userInput.trim() === "") {
+                tickIcon.style.display = "none";
+                errorMessage.textContent = "Error: Please enter a number.";
+                alert(errorMessage.textContent);
+                errorMessage.textContent = "";
+                return; 
+            }
+        
+            if (!isNaN(userInput) && userInput >= 13 && userInput <= 100) {
+                tickIcon.style.display = "inline";
+                errorMessage.textContent = "";
+            } else {
+                tickIcon.style.display = "none";
+                errorMessage.textContent = "Error: Please enter a valid number between 13 and 100.";
+                alert(errorMessage.textContent);
+                errorMessage.textContent = "";
+            }
+
+        }
+
+        function submit() {
+            const genderCheckboxes = document.querySelectorAll('input[name="gender"]');
+            const ageInput = document.getElementById('userNumber').value;
+
+            let validGender = false;
+            genderCheckboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    validGender = true;
+                }
+            });
+
+            const validAge = !isNaN(ageInput) && ageInput >= 13 && ageInput <= 100;
+
+            if (validGender && validAge) {
+                window.location.href = 'choose-part.html';
+            } else {
+                alert('Please make sure to select a valid gender (Male or Female) and enter a valid age (13-100).');
+            }
+        }
+    </script>
+</body>
+</html>
